@@ -1,0 +1,167 @@
+:root {
+    --primary-color: #8e44ad;
+    --secondary-color: #9b59b6;
+    --background-gradient: linear-gradient(135deg, #8e44ad, #2c3e50);
+    --container-bg: rgba(255, 255, 255, 0.15);
+    --text-color: #f0f0f0;
+    --completed-color: #bdc3c7;
+    --shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--background-gradient);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    background: var(--container-bg);
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    width: 100%;
+    max-width: 550px;
+    overflow: hidden;
+}
+
+header {
+    background: transparent;
+    color: white;
+    padding: 2rem;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+header h1 {
+    font-weight: 600;
+    font-size: 1.8rem;
+}
+
+#logout-btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+#logout-btn:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+
+.input-section {
+    display: flex;
+    gap: 10px;
+}
+
+#todo-input {
+    flex: 1;
+    padding: 12px 15px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    transition: all 0.3s ease;
+}
+
+#todo-input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+#todo-input:focus {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: white;
+}
+
+#add-button {
+    background: white;
+    color: var(--primary-color);
+    border: none;
+    border-radius: 8px;
+    width: 45px;
+    height: 45px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#add-button:hover {
+    transform: rotate(90deg);
+    background: #f0f0f0;
+}
+
+main {
+    padding: 0 2rem 2rem 2rem;
+}
+
+#todo-list {
+    list-style: none;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+#todo-list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    word-break: break-word;
+}
+
+#todo-list li:hover {
+    background: rgba(0, 0, 0, 0.2);
+    transform: scale(1.02);
+}
+
+#todo-list li.completed span {
+    text-decoration: line-through;
+    color: var(--completed-color);
+    opacity: 0.7;
+}
+
+#todo-list li span {
+    flex: 1;
+}
+
+#todo-list li .delete-btn {
+    background: transparent;
+    border: none;
+    color: #e74c3c;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    margin-left: 15px;
+}
+
+#todo-list li:hover .delete-btn {
+    opacity: 1;
+}

@@ -1,0 +1,115 @@
+:root {
+    --primary-color: #8e44ad;
+    --secondary-color: #9b59b6;
+    --background-gradient: linear-gradient(135deg, #6dd5ed, #2193b0);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--background-gradient);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.login-container {
+    perspective: 1000px;
+}
+
+.login-form {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 3rem;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    text-align: center;
+    color: white;
+    transform: rotateY(-5deg);
+    animation: fadeInRotate 1s ease-in-out forwards;
+}
+
+@keyframes fadeInRotate {
+    from {
+        opacity: 0;
+        transform: rotateY(-30deg) scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: rotateY(0deg) scale(1);
+    }
+}
+
+.login-form h2 {
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.login-form p {
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+    opacity: 0.8;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+    outline: none;
+    color: white;
+    font-size: 1rem;
+}
+
+.input-group label {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    color: rgba(255, 255, 255, 0.7);
+    pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.input-group input:focus + label,
+.input-group input:valid + label {
+    top: -15px;
+    font-size: 0.8rem;
+    color: white;
+}
+
+.input-group input:focus {
+    border-bottom-color: white;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: white;
+    color: #2193b0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background: var(--primary-color);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
